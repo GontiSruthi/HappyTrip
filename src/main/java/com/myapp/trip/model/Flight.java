@@ -35,6 +35,10 @@ public class Flight {
 	@Column
 	private String date_of_departure;
 
+	public Flight() {
+
+	}
+
 	public Flight(int flight_no, String flight_name, String airline_code, String airline_name, int capacity,
 			String from_city, String to_city, String arrival_time, String departure_time, double ticket_cost,
 			String date_of_departure) {

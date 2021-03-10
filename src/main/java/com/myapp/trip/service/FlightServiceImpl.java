@@ -1,28 +1,20 @@
 package com.myapp.trip.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import com.myapp.trip.model.Flight;
 import com.myapp.trip.repository.FlightRepository;
 
-@RestController
-public class FlightService {
+@Service
+public class FlightServiceImpl implements FlightService {
 	@Autowired
 	private FlightRepository flightRepository;
 
-	@GetMapping("/findFlights")
-	public List<Flight> findFlights(@RequestParam("source") String source,
+	@Override
+	public Flight findFlights(String source, String destination, String dateOfTravel) {
 
-			@RequestParam("destination") String destination, @RequestParam("departureDate") String departureDate) {
-
-		List<Flight> flights = flightRepository.findFlights(source, destination, departureDate);
-		return flights;
-
+		return flightRepository.findFlights(source, destination, dateOfTravel);
 	}
 
 }
