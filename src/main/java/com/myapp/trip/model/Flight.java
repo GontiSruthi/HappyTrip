@@ -100,44 +100,12 @@ public class Flight {
 		return date_of_departure;
 	}
 
-	public void setFlight_no(int flight_no) {
-		this.flight_no = flight_no;
-	}
-
-	public void setFlight_name(String flight_name) {
-		this.flight_name = flight_name;
-	}
-
-	public void setAirline_code(String airline_code) {
-		this.airline_code = airline_code;
-	}
-
-	public void setAirline_name(String airline_name) {
-		this.airline_name = airline_name;
-	}
-
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
-	}
-
 	public void setFrom_city(String from_city) {
 		this.from_city = from_city;
 	}
 
 	public void setTo_city(String to_city) {
 		this.to_city = to_city;
-	}
-
-	public void setArrival_time(String arrival_time) {
-		this.arrival_time = arrival_time;
-	}
-
-	public void setDeparture_time(String departure_time) {
-		this.departure_time = departure_time;
-	}
-
-	public void setTicket_cost(double ticket_cost) {
-		this.ticket_cost = ticket_cost;
 	}
 
 	public void setDate_of_departure(String date_of_departure) {

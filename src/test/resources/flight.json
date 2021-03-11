@@ -1,0 +1,2 @@
+[{"flight_no":111,"flight_name":"GA00111","airline_code":"GA","airline_name":"GoAir","capacity":30,"from_city":"Jaipur","to_city":"Mumbai","arrival_time":"8:30","departure_time":"11:30","ticket_cost":8400.0,"date_of_departure":"10-03-2021"},
+{"flight_no":123,"flight_name":"SJ00123","airline_code":"SJ","airline_name":"SpiceJet","capacity":30,"from_city":"Bangalore","to_city":"Delhi","arrival_time":"8:30","departure_time":"11:30","ticket_cost":8400.0,"date_of_departure":"09-03-2021"}]
