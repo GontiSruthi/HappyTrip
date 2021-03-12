@@ -45,7 +45,6 @@ public class FlightRepositoryTest {
 	}
 
 	interface Flight {
-
 		String getFrom_city();
 
 		String getTo_city();
