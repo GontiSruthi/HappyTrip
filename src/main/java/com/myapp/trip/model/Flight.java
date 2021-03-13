@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.http.HttpStatus;
-
 @Entity
 @Table(name = "Flight")
 public class Flight {
@@ -39,10 +37,6 @@ public class Flight {
 
 	public Flight() {
 
-	}
-
-	public Flight(String string, HttpStatus ok) {
-		// return from_city + " and " + to_city + " and " + date_of_departure;
 	}
 
 	public Flight(int flight_no, String flight_name, String airline_code, String airline_name, int capacity,
