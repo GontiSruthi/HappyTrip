@@ -24,7 +24,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myapp.trip.model.Flight;
 import com.myapp.trip.service.FlightServiceImpl;
 
@@ -41,9 +40,6 @@ public class FlightControllerTest {
 
 	@Autowired
 	private WebApplicationContext webApplicationContext;
-
-	@Autowired
-	private ObjectMapper mapper;
 
 	@BeforeEach
 	public void setup() throws JsonParseException, JsonMappingException, IOException {

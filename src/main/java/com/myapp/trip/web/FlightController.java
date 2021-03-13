@@ -1,7 +1,6 @@
 package com.myapp.trip.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +19,8 @@ public class FlightController {
 	@GetMapping(value = "/{enter-source}/{enter-destination}/{enter-dateoftravel}")
 	public Flight findFlights(@PathVariable("enter-source") String src, @PathVariable("enter-destination") String dest,
 			@PathVariable("enter-dateoftravel") String dot) {
-		return new Flight(src + " and " + (dest == null ? "<null>" : dest) + " and " + (dot == null ? "<null>" : dot),
-				HttpStatus.OK);
-		// Flight flightObj = fs.findFlights(src, dest, dot);
-		// return flightObj;
+		Flight flightObj = fs.findFlights(src, dest, dot);
+		return flightObj;
 	}
 
 }

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import org.springframework.http.HttpStatus;
 
 @Entity
-@Table(name = "FlightDetails")
+@Table(name = "Flight")
 public class Flight {
 	@Id
 	@Column(name = "flight_no")
