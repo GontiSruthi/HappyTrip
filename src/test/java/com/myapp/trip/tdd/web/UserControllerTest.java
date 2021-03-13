@@ -1,4 +1,4 @@
-package com.myapp.trip.tdd;
+package com.myapp.trip.tdd.web;
 //import com.myapp.trip.Service.UserService;
 import com.myapp.trip.model.User;
 import com.myapp.trip.service.UserService;
@@ -17,7 +17,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 //@SpringBootTest
 @WebMvcTest
-class RegistrationTest {
+class UserControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
 	@MockBean
