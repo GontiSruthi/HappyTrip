@@ -1,9 +1,16 @@
 package com.myapp.trip.tdd.service;
 
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.doReturn;
 
@@ -86,7 +93,13 @@ public class FlightDetailsServiceTest {
 		FlightDetails mockFlightDetails = new FlightDetails();
 		mockFlightDetails.setAvailable_business_seats(10);
 
+		assertTrue(service.checkSeatAvailability(mockFlightDetails, PreferredClass.BusinessClass));
+	}
+
+}
+
 		assertFalse(service.checkSeatAvailability(mockFlightDetails, PreferredClass.BusinessClass));
 	}
 
 }
+

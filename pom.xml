@@ -13,9 +13,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Happy-Trip</name>
+
+	<description>Flight booking system</description>
+
 	<description>Devops  </description>
 	<description>Flight Booking System</description>
-	<properties>
+
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
@@ -61,6 +64,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 <dependency>
 
@@ -69,6 +73,7 @@
     <version>1.10.19</version>
     <scope>test</scope>
 </dependency>
+
 	</dependencies>
 
 	<build>
@@ -80,4 +85,8 @@
 		</plugins>
 	</build>
 
+
 </project>
+
+</project>
+

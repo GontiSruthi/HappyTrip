@@ -26,6 +26,11 @@ public class FlightDetails {
 	@Column
 	private String Arrival_time;
 	@Column
+
+	private int available_business_seats = 30;
+	@Column
+	private int available_economy_seats = 30;
+
 	private int available_business_seats;
 	@Column
 	private int available_economy_seats;
@@ -48,6 +53,12 @@ public class FlightDetails {
 		this.available_business_seats = available_business_seats;
 		this.available_economy_seats = available_economy_seats;
 	}
+
+
+	public FlightDetails() {
+
+	}
+
 
 	public int getId() {
 		return id;

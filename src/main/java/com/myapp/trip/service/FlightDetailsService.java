@@ -5,7 +5,9 @@ import com.myapp.trip.model.FlightDetails;
 
 public interface FlightDetailsService {
 
+
 	public FlightDetails findFlightById(int Flight_no);
+
 
 	public FlightDetails getFlightById(int id);
 
@@ -17,5 +19,7 @@ public interface FlightDetailsService {
 	// String to_city, Date d);
 
 	public FlightDetails searchFlight(String from_city, String to_city, String travel_date);
+
+	public FlightDetails findFlightById(int Flight_no);
 
 }
