@@ -26,9 +26,18 @@ public class FlightDetails {
 	@Column
 	private String Arrival_time;
 	@Column
+
 	private int available_business_seats = 30;
 	@Column
 	private int available_economy_seats = 30;
+
+	private int available_business_seats;
+	@Column
+	private int available_economy_seats;
+
+	public FlightDetails() {
+
+	}
 
 	public FlightDetails(int id, String from_city, String to_city, String travel_date, int flight_id,
 			String airline_name, String departure_time, String arrival_time, int available_business_seats,
@@ -45,9 +54,11 @@ public class FlightDetails {
 		this.available_economy_seats = available_economy_seats;
 	}
 
+
 	public FlightDetails() {
 
 	}
+
 
 	public int getId() {
 		return id;

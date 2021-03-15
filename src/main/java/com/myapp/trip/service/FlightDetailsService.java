@@ -5,6 +5,10 @@ import com.myapp.trip.model.FlightDetails;
 
 public interface FlightDetailsService {
 
+
+	public FlightDetails findFlightById(int Flight_no);
+
+
 	public FlightDetails getFlightById(int id);
 
 	public Boolean checkSeatAvailability(FlightDetails flight, PreferredClass preferredClass);
