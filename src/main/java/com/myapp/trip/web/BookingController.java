@@ -20,7 +20,6 @@ import com.myapp.trip.service.BookingService;
 import com.myapp.trip.service.FareService;
 import com.myapp.trip.service.FlightDetailsService;
 import com.myapp.trip.service.PassengerService;
-import com.sun.el.parser.ParseException;
 
 @RestController
 public class BookingController {
@@ -37,7 +36,7 @@ public class BookingController {
 	BookingService bookingService;
 
 	@PostMapping("/bookTicket")
-	public Map<String, Object> bookTicket(@RequestBody BookingDto bookingDto) throws ParseException {
+	public Map<String, Object> bookTicket(@RequestBody BookingDto bookingDto) {
 		Map<String, Object> map = new HashMap<>();
 
 		Passenger passenger = bookingDto.getPassenger();
@@ -83,14 +82,9 @@ public class BookingController {
 				+ "<strong>Booking ID: </strong>" + booking.getId() + "<br><strong>Name: </strong>"
 				+ booking.getPassenger().getName() + "<br><strong>Age: </strong> " + booking.getPassenger().getAge()
 				+ "<br><strong>Gender: </strong>" + booking.getPassenger().getGender() + "<br><strong>Source: </strong>"
-				+ booking.getFlight().getFrom_city() + "<br><strong>Destination: </strong>"
-				+ booking.getFlight().getTo_city() + "<br><strong>Preferred Class: </strong> "
+				+ booking.getFlight().getFromCity() + "<br><strong>Destination: </strong>"
+				+ booking.getFlight().getToCity() + "<br><strong>Preferred Class: </strong> "
 				+ booking.getPreferredClass() + "<br><strong>Fare: </strong>" + booking.getFare();
 	}
-
-//	@GetMapping("/all-bookings")
-//	public List<Booking> getAllBookings() {
-//		return bookingService.getBookings();
-//	}
 
 }

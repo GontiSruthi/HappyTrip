@@ -12,8 +12,6 @@ public interface BookingService {
 
 	public Booking getBookingById(int id);
 
-	// public List<Booking> getBookings();
-
 	public Booking confirmBooking(Passenger passenger, FlightDetails flight, String date, PreferredClass preferredClass,
 			Fare fare);
 

@@ -1,18 +1,16 @@
 package com.myapp.trip.tdd;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 import com.myapp.trip.dto.BookingDto;
-//import com.myapp.trip.model.Passenger;
 
 public class BookingDtoTest {
 	@Test
 	public void getDtoInfo() {
 		BookingDto bookingdto = new BookingDto();
 		bookingdto.setPassenger(null);
-		// passenger.setGender("female");
 		bookingdto.setSource("hyderabad");
 		bookingdto.setDestination("vizag");
 		bookingdto.setDate("11-09-2021");

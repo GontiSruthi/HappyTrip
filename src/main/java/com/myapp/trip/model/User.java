@@ -1,14 +1,12 @@
 package com.myapp.trip.model;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.EnumType;
-//import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-//@Table(name = "users")
 public class User {
 
 	@Id
@@ -28,11 +26,11 @@ public class User {
 	private long contact;
 	@Column
 	private String emailid;
-    public User() {
-    	
-    }
-	
-	
+
+	public User() {
+
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -96,5 +94,5 @@ public class User {
 	public void setEmailid(String emailid) {
 		this.emailid = emailid;
 	}
-	
+
 }

@@ -10,7 +10,6 @@ import com.myapp.trip.model.FlightDetails;
 import com.myapp.trip.model.Passenger;
 import com.myapp.trip.repository.BookingRepository;
 
-//import org.apache.logging.log4j.Logger;
 @Service
 public class BookingServiceImpl implements BookingService {
 	@Autowired
@@ -35,13 +34,8 @@ public class BookingServiceImpl implements BookingService {
 
 	@Override
 	public Booking getBookingById(int id) {
-		return bookingRepo.findById(id);// .orElse(null);
+		return bookingRepo.findById(id);
 	}
-//
-//	@Override
-//	public List<Booking> getBookings() {
-//		return bookingRepo.findAll();
-//	}
 
 	@Override
 	public Booking confirmBooking(Passenger passenger, FlightDetails flight, String date, PreferredClass preferredClass,

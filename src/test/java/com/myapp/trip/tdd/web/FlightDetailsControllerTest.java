@@ -50,9 +50,9 @@ public class FlightDetailsControllerTest {
 	public void testFindAllFlights() throws Exception {
 		FlightDetails mockFlight = new FlightDetails();
 
-		mockFlight.setFlight_id(2121);
+		mockFlight.setFlightId(2121);
 
-		doReturn(mockFlight).when(service).findFlightById(mockFlight.getFlight_id());
+		doReturn(mockFlight).when(service).findFlightById(mockFlight.getFlightId());
 		MvcResult mvcResult = mockMvc.perform(get("/flight/{flightId}", 2121)).andExpect(status().isOk())
 				.andExpect(content().contentType("application/json")).andReturn();
 		assertEquals("application/json", mvcResult.getResponse().getContentType());

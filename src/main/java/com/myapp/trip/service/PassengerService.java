@@ -10,6 +10,4 @@ public interface PassengerService {
 
 	public Passenger getPassengerByName(String name);
 
-	// public List<Passenger> getCustomers();
-
 }

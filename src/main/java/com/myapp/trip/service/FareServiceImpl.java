@@ -12,30 +12,9 @@ public class FareServiceImpl implements FareService {
 	@Autowired
 	private FareRepository fareRepo;
 
-//	@Override
-//	public Boolean save(Fare f) {
-//		fareRepo.save(f);
-//		return null;
-//	}
-
-//	@Override
-//	public Fare getFareById(int id) {
-//		return fareRepo.findById(id).orElse(null);
-//	}
-//
-//	@Override
-//	public List<Fare> getFares() {
-//		return fareRepo.findAll();
-//	}
-
-//	@Override
-//	public void deleteFareById(int id) {
-//		fareRepo.deleteById(id);
-//	}
-
 	@Override
-	public Fare getFareByFlightId(int flight_id) {
-		return fareRepo.findByFlightId(flight_id);
+	public Fare getFareByFlightId(int flightId) {
+		return fareRepo.findByFlightId(flightId);
 	}
 
 }

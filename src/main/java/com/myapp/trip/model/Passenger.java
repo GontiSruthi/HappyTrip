@@ -11,10 +11,6 @@ import javax.persistence.Table;
 @Table(name = "Passenger")
 public class Passenger {
 
-//	enum Gender {
-//		male, female, other
-//	};
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -26,7 +22,6 @@ public class Passenger {
 	private int age;
 
 	@Column(name = "gender", nullable = false)
-	// @Enumerated(EnumType.STRING)
 	private String gender;
 
 	@Column(name = "contact", nullable = false)
@@ -37,7 +32,6 @@ public class Passenger {
 	}
 
 	public Passenger(int i, String string, String string2, int j, int k) {
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {

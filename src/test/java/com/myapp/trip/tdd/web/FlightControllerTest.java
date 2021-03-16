@@ -51,12 +51,12 @@ public class FlightControllerTest {
 	public void testFindAllFlights() throws Exception {
 
 		Flight mockFlight = new Flight();
-		mockFlight.setFrom_city("Bangalore");
-		mockFlight.setTo_city("Delhi");
-		mockFlight.setDate_of_departure("09-03-2021");
+		mockFlight.setFromCity("Bangalore");
+		mockFlight.setToCity("Delhi");
+		mockFlight.setDateOfDeparture("09-03-2021");
 
-		doReturn(mockFlight).when(service).findFlights(mockFlight.getFrom_city(), mockFlight.getTo_city(),
-				mockFlight.getDate_of_departure());
+		doReturn(mockFlight).when(service).findFlights(mockFlight.getFromCity(), mockFlight.getToCity(),
+				mockFlight.getDateOfDeparture());
 
 		MvcResult mvcResult = mockMvc
 				.perform(get("/SearchFlight/{from_city}/{to_city}/{date_of_departure}", "Bangalore", "Delhi",

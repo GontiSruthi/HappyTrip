@@ -13,103 +13,135 @@ public class Flight {
 	@Id
 	@Column(name = "flight_no")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int flight_no;
+	private int flightNo;
 	@Column
-	private String flight_name;
+	private String flightName;
 	@Column
-	private String airline_code;
+	private String airlineCode;
 	@Column
-	private String airline_name;
+	private String airlineName;
 	@Column
 	private int capacity;
 	@Column
-	private String from_city;
+	private String fromCity;
 	@Column
-	private String to_city;
+	private String toCity;
 	@Column
-	private String arrival_time;
+	private String arrivalTime;
 	@Column
-	private String departure_time;
+	private String departureTime;
 	@Column
-	private double ticket_cost;
+	private double ticketCost;
 	@Column
-	private String date_of_departure;
+	private String dateOfDeparture;
 
 	public Flight() {
 
 	}
 
-	public Flight(int flight_no, String flight_name, String airline_code, String airline_name, int capacity,
-			String from_city, String to_city, String arrival_time, String departure_time, double ticket_cost,
-			String date_of_departure) {
+	public Flight(int flightNo, String flightName, String airlineCode, String airlineName, int capacity,
+			String fromCity, String toCity, String arrivalTime, String departureTime, double ticketCost,
+			String dateOfDeparture) {
 		super();
-		this.flight_no = flight_no;
-		this.flight_name = flight_name;
-		this.airline_code = airline_code;
-		this.airline_name = airline_name;
+		this.flightNo = flightNo;
+		this.flightName = flightName;
+		this.airlineCode = airlineCode;
+		this.airlineName = airlineName;
 		this.capacity = capacity;
-		this.from_city = from_city;
-		this.to_city = to_city;
-		this.arrival_time = arrival_time;
-		this.departure_time = departure_time;
-		this.ticket_cost = ticket_cost;
-		this.date_of_departure = date_of_departure;
+		this.fromCity = fromCity;
+		this.toCity = toCity;
+		this.arrivalTime = arrivalTime;
+		this.departureTime = departureTime;
+		this.ticketCost = ticketCost;
+		this.dateOfDeparture = dateOfDeparture;
 	}
 
-	public int getFlight_no() {
-		return flight_no;
+	public int getFlightNo() {
+		return flightNo;
 	}
 
-	public String getFlight_name() {
-		return flight_name;
+	public String getFlightName() {
+		return flightName;
 	}
 
-	public String getAirline_code() {
-		return airline_code;
+	public String getAirlineCode() {
+		return airlineCode;
 	}
 
-	public String getAirline_name() {
-		return airline_name;
+	public String getAirlineName() {
+		return airlineName;
 	}
 
 	public int getCapacity() {
 		return capacity;
 	}
 
-	public String getFrom_city() {
-		return from_city;
+	public String getFromCity() {
+		return fromCity;
 	}
 
-	public String getTo_city() {
-		return to_city;
+	public String getToCity() {
+		return toCity;
 	}
 
-	public String getArrival_time() {
-		return arrival_time;
+	public String getArrivalTime() {
+		return arrivalTime;
 	}
 
-	public String getDeparture_time() {
-		return departure_time;
+	public String getDepartureTime() {
+		return departureTime;
 	}
 
-	public double getTicket_cost() {
-		return ticket_cost;
+	public double getTicketCost() {
+		return ticketCost;
 	}
 
-	public String getDate_of_departure() {
-		return date_of_departure;
+	public String getDateOfDeparture() {
+		return dateOfDeparture;
 	}
 
-	public void setFrom_city(String from_city) {
-		this.from_city = from_city;
+	public void setFlightNo(int flightNo) {
+		this.flightNo = flightNo;
 	}
 
-	public void setTo_city(String to_city) {
-		this.to_city = to_city;
+	public void setFlightName(String flightName) {
+		this.flightName = flightName;
 	}
 
-	public void setDate_of_departure(String date_of_departure) {
-		this.date_of_departure = date_of_departure;
+	public void setAirlineCode(String airlineCode) {
+		this.airlineCode = airlineCode;
+	}
+
+	public void setAirlineName(String airlineName) {
+		this.airlineName = airlineName;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public void setFromCity(String fromCity) {
+		this.fromCity = fromCity;
+	}
+
+	public void setToCity(String toCity) {
+		this.toCity = toCity;
+	}
+
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public void setTicketCost(double ticketCost) {
+		this.ticketCost = ticketCost;
+	}
+
+	public void setDateOfDeparture(String dateOfDeparture) {
+		this.dateOfDeparture = dateOfDeparture;
 	}
 
 }

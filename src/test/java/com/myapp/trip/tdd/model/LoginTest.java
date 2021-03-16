@@ -1,27 +1,30 @@
 package com.myapp.trip.tdd.model;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.myapp.trip.model.Login;
 
-//@RunWith(SpringRunner.class)
-@SpringBootTest // (classes = HappyTripApplication.class)
 public class LoginTest {
-	@Autowired
-	Login login;
+	public Login login;
+
+	@BeforeEach
+	void setUp() {
+		login = new Login(1, "sruthi", "123");
+	}
+
+	@AfterEach
+	void tearDown() {
+		login = null;
+	}
 
 	@Test
 	public void testLogin() {
-		Login login = new Login(1, "sruthi", "123");
-		login.setId(1);
-		login.setUsername("sruthi");
-		login.setPassword("123");
 		assertEquals(1, login.getId());
 		assertEquals("sruthi", login.getUsername());
-		assertEquals("123", login.getPassword());
+		assertEquals("123", login.getPass());
 	}
 }

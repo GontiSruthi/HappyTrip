@@ -31,13 +31,6 @@ public class Fare {
 
 	}
 
-//	public Fare(int id, int businessClassFare, int economyClassFare, FlightDetails flight) {
-//		this.id = id;
-//		this.businessClassFare = businessClassFare;
-//		this.economyClassFare = economyClassFare;
-//		this.flight = flight;
-//	}
-
 	public int getId() {
 		return id;
 	}

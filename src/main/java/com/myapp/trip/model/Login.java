@@ -16,39 +16,41 @@ public class Login {
 	@Column
 	private String username;
 	@Column
-	private String password;
-
-	public Login(int id, String username, String password) {
-		this.id = id;
-		this.username = username;
-		this.password = password;
-	}
+	private String pass;
 
 	public Login() {
+
+	}
+
+	public Login(int id, String username, String pass) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.pass = pass;
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getUsername() {
 		return username;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
 }

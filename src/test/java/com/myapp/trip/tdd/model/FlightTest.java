@@ -24,17 +24,17 @@ public class FlightTest {
 
 	@Test
 	public void testFlight() {
-		assertEquals(123, flightData.getFlight_no());
-		assertEquals("SJ00123", flightData.getFlight_name());
-		assertEquals("SJ", flightData.getAirline_code());
-		assertEquals("SpiceJet", flightData.getAirline_name());
+		assertEquals(123, flightData.getFlightNo());
+		assertEquals("SJ00123", flightData.getFlightName());
+		assertEquals("SJ", flightData.getAirlineCode());
+		assertEquals("SpiceJet", flightData.getAirlineName());
 		assertEquals(30, flightData.getCapacity());
-		assertEquals("Bangalore", flightData.getFrom_city());
-		assertEquals("Delhi", flightData.getTo_city());
-		assertEquals("11:00", flightData.getArrival_time());
-		assertEquals("13:30", flightData.getDeparture_time());
-		assertEquals(5600, flightData.getTicket_cost());
-		assertEquals("07-03-2021", flightData.getDate_of_departure());
+		assertEquals("Bangalore", flightData.getFromCity());
+		assertEquals("Delhi", flightData.getToCity());
+		assertEquals("11:00", flightData.getArrivalTime());
+		assertEquals("13:30", flightData.getDepartureTime());
+		assertEquals(5600, flightData.getTicketCost());
+		assertEquals("07-03-2021", flightData.getDateOfDeparture());
 
 	}
 }

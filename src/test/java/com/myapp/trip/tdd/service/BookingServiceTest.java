@@ -31,14 +31,11 @@ public class BookingServiceTest {
 
 		Booking mockbook = new Booking();
 		mockbook.setId(1);
-		// mockbook.setBookedDate("2021-03-11");
 		int id = 1;
-		// String BookedDate = "2021-03-11";
 		doReturn(mockbook).when(bookingrepo).findById(id);
 		Booking foundBooking = service.getBookingById(id);
 		assertNotNull(foundBooking);
 		assertEquals(id, foundBooking.getId());
-		// assertSame("2021-03-11", foundBooking.getBookedDate());
 
 	}
 
@@ -48,7 +45,6 @@ public class BookingServiceTest {
 		Booking book = new Booking();
 		Booking book1 = new Booking();
 		Passenger passenger = new Passenger();
-		// Fare fare = new Fare();
 		FlightDetails flight = new FlightDetails(1, "Banglore", "Pune", "2021-02-24", 4353, "IndiaGo", "01:00:00",
 				"12:35:04", 30, 30);
 		passenger.setId(1);
@@ -56,7 +52,6 @@ public class BookingServiceTest {
 		passenger.setName("saloni");
 		passenger.setAge(21);
 		passenger.setContact(98765432);
-		// book.setFare(2500);
 		Fare fare = new Fare();
 		fare.setId(1);
 		fare.setBusinessClassFare(5000);
@@ -80,6 +75,5 @@ public class BookingServiceTest {
 
 		assertEquals(flight.getId(), passenger.getId());
 
-		// assertTrue(service.confirmBooking(getB, PreferredClass.BusinessClass));
 	}
 }

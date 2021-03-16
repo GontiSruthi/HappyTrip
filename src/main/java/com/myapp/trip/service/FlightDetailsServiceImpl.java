@@ -21,42 +21,33 @@ public class FlightDetailsServiceImpl implements FlightDetailsService {
 
 	@Override
 	public Boolean checkSeatAvailability(FlightDetails flight, PreferredClass preferredClass) {
-		if (preferredClass == PreferredClass.BusinessClass && flight.getAvailable_business_seats() <= 0)
+		if (preferredClass == PreferredClass.BusinessClass && flight.getAvailableBusinessSeats() <= 0)
 			return false;
-		else if (flight.getAvailable_economy_seats() <= 0)
+		else if (flight.getAvailableEconomySeats() <= 0)
 			return false;
 		else
 			return true;
 	}
 
-//	@Override
-//	public FlightDetails getFlightBySourceAndDestinationAndDate(String from_city, String to_city, Date d) {
-//		return flightRepo.findBySourceAndDestinationAndDate(from_city, to_city, d);
-//	}
-
 	@Override
-	public FlightDetails searchFlight(String from_city, String to_city, String travel_date) {
-		return repository.findBySourceAndDestinationAndDate(from_city, to_city, travel_date);
+	public FlightDetails searchFlight(String fromCity, String toCity, String travelDate) {
+		return repository.findBySourceAndDestinationAndDate(fromCity, toCity, travelDate);
 	}
 
 	@Override
-	public FlightDetails findFlightById(int Flight_no) {
+	public FlightDetails findFlightById(int FlightNo) {
 
-		return repository.findFlightById(Flight_no);
+		return repository.findFlightById(FlightNo);
 	}
 
 	@Override
 	public void updateSeatAvaialability(FlightDetails flight, PreferredClass preferredClass) {
 		if (preferredClass == PreferredClass.BusinessClass)
-			flight.setAvailable_business_seats(flight.getAvailable_business_seats() - 1);
+			flight.setAvailableBusinessSeats(flight.getAvailableBusinessSeats() - 1);
 		else
-			flight.setAvailable_economy_seats(flight.getAvailable_economy_seats() - 1);
+			flight.setAvailableEconomySeats(flight.getAvailableEconomySeats() - 1);
 		flight = repository.save(flight);
 
 	}
 
-
 }
-
-}
-

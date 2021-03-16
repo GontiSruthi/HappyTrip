@@ -27,16 +27,16 @@ public class FlightServiceTest {
 	@DisplayName("Test Flight with Source, Destination and date of travel successfully")
 	public void testFlightNotFoundForNonExistingId() {
 		Flight mockFlight = new Flight();
-		mockFlight.setFrom_city("Bangalore");
-		mockFlight.setTo_city("Delhi");
-		mockFlight.setDate_of_departure("09-03-2021");
+		mockFlight.setFromCity("Bangalore");
+		mockFlight.setToCity("Delhi");
+		mockFlight.setDateOfDeparture("09-03-2021");
 
 		doReturn(mockFlight).when(repository).findFlights("Bangalore", "Delhi", "09-03-2021");
 
 		Flight foundFlight = service.findFlights("Bangalore", "Delhi", "09-03-2021");
 		assertNotNull(foundFlight);
-		assertSame("Bangalore", foundFlight.getFrom_city());
-		assertSame("Delhi", foundFlight.getTo_city());
-		assertSame("09-03-2021", foundFlight.getDate_of_departure());
+		assertSame("Bangalore", foundFlight.getFromCity());
+		assertSame("Delhi", foundFlight.getToCity());
+		assertSame("09-03-2021", foundFlight.getDateOfDeparture());
 	}
 }

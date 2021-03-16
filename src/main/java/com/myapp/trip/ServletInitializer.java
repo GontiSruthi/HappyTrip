@@ -8,8 +8,6 @@ public class ServletInitializer extends SpringBootServletInitializer {
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 
-		return application.sources(MyTripApplication.class);
-
 		return application.sources(HappyTripApplication.class);
 
 	}

@@ -39,9 +39,6 @@ public class LoginControllerTest {
 	private String username = "sruthi";
 	private String password = "123";
 
-//	@MockBean
-//	private LoginRepository loginRepository;
-
 	@BeforeEach
 	public void setup() {
 		this.mockMvc = MockMvcBuilders.standaloneSetup(loginController).build();
@@ -49,9 +46,6 @@ public class LoginControllerTest {
 
 	@Test
 	public void testAuthentication() throws Exception {
-
-		// when(loginService.authentication(username, password)).thenReturn(getLogin());
-		// Login(1,"sruthi,'123"));
 
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/userlogin/")
 				.param("username", username).param("password", password);

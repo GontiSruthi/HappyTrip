@@ -18,30 +18,26 @@ public class FlightDetailsTest {
 		booking = new FlightDetails(101, "Banglore", "Pune", "2021-02-24", 4353, "IndiaGo", "01:00:00", "12:35:04", 30,
 				30);
 		booking.setId(101);
-		booking.setFrom_city("Banglore");
-		booking.setTo_city("Pune");
-		booking.setTravel_date("2021-02-24");
-		booking.setArrival_time("12:35:04");
-		booking.setAirline_name("IndiaGo");
-		booking.setDeparture_time("01:00:00");
-		booking.setFlight_id(4353);
-		booking.setAvailable_business_seats(30);
-		booking.setAvailable_economy_seats(30);
+		booking.setFromCity("Banglore");
+		booking.setToCity("Pune");
+		booking.setTravelDate("2021-02-24");
+		booking.setArrivalTime("12:35:04");
+		booking.setAirlineName("IndiaGo");
+		booking.setDepartureTime("01:00:00");
+		booking.setFlightId(4353);
+		booking.setAvailableBusinessSeats(30);
+		booking.setAvailableEconomySeats(30);
 		assertEquals(101, booking.getId());
-		assertEquals("Banglore", booking.getFrom_city());
-		assertEquals("Pune", booking.getTo_city());
-		assertEquals("2021-02-24", booking.getTravel_date());
-		assertEquals("12:35:04", booking.getArrival_time());
-		assertEquals("01:00:00", booking.getDeparture_time());
-		assertEquals("IndiaGo", booking.getAirline_name());
-		assertEquals(4353, booking.getFlight_id());
-		assertEquals(30, booking.getAvailable_business_seats());
-		assertEquals(30, booking.getAvailable_economy_seats());
+		assertEquals("Banglore", booking.getFromCity());
+		assertEquals("Pune", booking.getToCity());
+		assertEquals("2021-02-24", booking.getTravelDate());
+		assertEquals("12:35:04", booking.getArrivalTime());
+		assertEquals("01:00:00", booking.getDepartureTime());
+		assertEquals("IndiaGo", booking.getAirlineName());
+		assertEquals(4353, booking.getFlightId());
+		assertEquals(30, booking.getAvailableBusinessSeats());
+		assertEquals(30, booking.getAvailableEconomySeats());
 
 	}
 
-
 }
-
-}
-

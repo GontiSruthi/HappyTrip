@@ -1,16 +1,19 @@
 package com.myapp.trip.tdd.web;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -23,8 +26,9 @@ import com.myapp.trip.service.FareService;
 import com.myapp.trip.service.FlightDetailsService;
 import com.myapp.trip.service.PassengerService;
 
-//@SpringBootTest
-@WebMvcTest
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 public class BookingControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
@@ -57,8 +61,8 @@ public class BookingControllerTest {
 						+ getBookInfo().getPassenger().getName() + "<br><strong>Age: </strong> "
 						+ getBookInfo().getPassenger().getAge() + "<br><strong>Gender: </strong>"
 						+ getBookInfo().getPassenger().getGender() + "<br><strong>Source: </strong>"
-						+ getBookInfo().getFlight().getFrom_city() + "<br><strong>Destination: </strong>"
-						+ getBookInfo().getFlight().getTo_city() + "<br><strong>Preferred Class: </strong> "
+						+ getBookInfo().getFlight().getFromCity() + "<br><strong>Destination: </strong>"
+						+ getBookInfo().getFlight().getToCity() + "<br><strong>Preferred Class: </strong> "
 						+ getBookInfo().getPreferredClass() + "<br><strong>Fare: </strong>" + getBookInfo().getFare()));
 		System.out.println(result.getResponse().getContentAsString());
 		assertFalse(result.getResponse().getContentAsString()

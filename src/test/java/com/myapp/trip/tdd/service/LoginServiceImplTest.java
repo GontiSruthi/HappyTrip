@@ -40,17 +40,12 @@ public class LoginServiceImplTest {
 		Login authenticated = service.authentication("sruthi", "123");
 		assertNotEquals(getMockLogin(), authenticated);
 
-//		doReturn(mocklogin).when(service.authentication("sruthi", "123"));
-//
-//		Login authenticated = service.authentication("sruthi", "123");
-//		assertNotNull(authenticated);
-
 	}
 
 	private Login getMockLogin() {
 		Login mocklogin = new Login();
 		mocklogin.setUsername("sruthi");
-		mocklogin.setPassword("123");
+		mocklogin.setPass("123");
 		return mocklogin;
 	}
 }

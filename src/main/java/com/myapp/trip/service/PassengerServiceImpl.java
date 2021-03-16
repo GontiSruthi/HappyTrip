@@ -23,13 +23,8 @@ public class PassengerServiceImpl implements PassengerService {
 
 	@Override
 	public Passenger getPassengerById(int id) {
-		return passengerRepo.findById(id);// .orElse(null);
+		return passengerRepo.findById(id);
 	}
-
-//	@Override
-//	public List<Passenger> getCustomers() {
-//		return passengerRepo.findAll();
-//	}
 
 	@Override
 	public Passenger getPassengerByName(String name) {

@@ -7,7 +7,7 @@ import com.myapp.trip.model.Flight;
 
 public interface FlightRepository extends JpaRepository<Flight, Integer> {
 
-	@Query("select f from Flight f where from_city=?1 and to_city=?2 and date_of_departure=?3")
+	@Query("select f from Flight f where fromCity=?1 and toCity=?2 and dateOfDeparture=?3")
 	public Flight findFlights(String source, String destination, String dateOfTravel);
 
 }

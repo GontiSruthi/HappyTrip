@@ -12,132 +12,122 @@ public class FlightDetails {
 	@Column
 	private int id;
 	@Column
-	private String from_city;
+	private String fromCity;
 	@Column
-	private String to_city;
+	private String toCity;
 	@Column
-	private String travel_date;
+	private String travelDate;
 	@Column
-	private int Flight_id;
+	private int flightId;
 	@Column
-	private String Airline_name;
+	private String airlineName;
 	@Column
-	private String Departure_time;
+	private String departureTime;
 	@Column
-	private String Arrival_time;
+	private String arrivalTime;
 	@Column
 
-	private int available_business_seats = 30;
+	private int availableBusinessSeats = 30;
 	@Column
-	private int available_economy_seats = 30;
+	private int availableEconomySeats = 30;
 
-	private int available_business_seats;
-	@Column
-	private int available_economy_seats;
-
-	public FlightDetails() {
-
-	}
-
-	public FlightDetails(int id, String from_city, String to_city, String travel_date, int flight_id,
-			String airline_name, String departure_time, String arrival_time, int available_business_seats,
-			int available_economy_seats) {
+	public FlightDetails(int id, String fromCity, String toCity, String travelDate, int flightId, String airlineName,
+			String departureTime, String arrivalTime, int availableBusinessSeats, int availableEconomySeats) {
+		super();
 		this.id = id;
-		this.from_city = from_city;
-		this.to_city = to_city;
-		this.travel_date = travel_date;
-		Flight_id = flight_id;
-		Airline_name = airline_name;
-		Departure_time = departure_time;
-		Arrival_time = arrival_time;
-		this.available_business_seats = available_business_seats;
-		this.available_economy_seats = available_economy_seats;
+		this.fromCity = fromCity;
+		this.toCity = toCity;
+		this.travelDate = travelDate;
+		this.flightId = flightId;
+		this.airlineName = airlineName;
+		this.departureTime = departureTime;
+		this.arrivalTime = arrivalTime;
+		this.availableBusinessSeats = availableBusinessSeats;
+		this.availableEconomySeats = availableEconomySeats;
 	}
-
 
 	public FlightDetails() {
 
 	}
-
 
 	public int getId() {
 		return id;
+	}
+
+	public String getFromCity() {
+		return fromCity;
+	}
+
+	public String getToCity() {
+		return toCity;
+	}
+
+	public String getTravelDate() {
+		return travelDate;
+	}
+
+	public int getFlightId() {
+		return flightId;
+	}
+
+	public String getAirlineName() {
+		return airlineName;
+	}
+
+	public String getDepartureTime() {
+		return departureTime;
+	}
+
+	public String getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public int getAvailableBusinessSeats() {
+		return availableBusinessSeats;
+	}
+
+	public int getAvailableEconomySeats() {
+		return availableEconomySeats;
 	}
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getFrom_city() {
-		return from_city;
+	public void setFromCity(String fromCity) {
+		this.fromCity = fromCity;
 	}
 
-	public void setFrom_city(String from_city) {
-		this.from_city = from_city;
+	public void setToCity(String toCity) {
+		this.toCity = toCity;
 	}
 
-	public String getTo_city() {
-		return to_city;
+	public void setTravelDate(String travelDate) {
+		this.travelDate = travelDate;
 	}
 
-	public void setTo_city(String to_city) {
-		this.to_city = to_city;
+	public void setFlightId(int flightId) {
+		this.flightId = flightId;
 	}
 
-	public String getTravel_date() {
-		return travel_date;
+	public void setAirlineName(String airlineName) {
+		this.airlineName = airlineName;
 	}
 
-	public void setTravel_date(String travel_date) {
-		this.travel_date = travel_date;
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
 	}
 
-	public int getFlight_id() {
-		return Flight_id;
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
 	}
 
-	public void setFlight_id(int flight_id) {
-		Flight_id = flight_id;
+	public void setAvailableBusinessSeats(int availableBusinessSeats) {
+		this.availableBusinessSeats = availableBusinessSeats;
 	}
 
-	public String getAirline_name() {
-		return Airline_name;
-	}
-
-	public void setAirline_name(String airline_name) {
-		Airline_name = airline_name;
-	}
-
-	public String getDeparture_time() {
-		return Departure_time;
-	}
-
-	public void setDeparture_time(String departure_time) {
-		Departure_time = departure_time;
-	}
-
-	public String getArrival_time() {
-		return Arrival_time;
-	}
-
-	public void setArrival_time(String arrival_time) {
-		Arrival_time = arrival_time;
-	}
-
-	public int getAvailable_business_seats() {
-		return available_business_seats;
-	}
-
-	public void setAvailable_business_seats(int available_business_seats) {
-		this.available_business_seats = available_business_seats;
-	}
-
-	public int getAvailable_economy_seats() {
-		return available_economy_seats;
-	}
-
-	public void setAvailable_economy_seats(int available_economy_seats) {
-		this.available_economy_seats = available_economy_seats;
+	public void setAvailableEconomySeats(int availableEconomySeats) {
+		this.availableEconomySeats = availableEconomySeats;
 	}
 
 }

@@ -17,8 +17,4 @@ public class FlightServiceImpl implements FlightService {
 		return flightRepository.findFlights(source, destination, dateOfTravel);
 	}
 
-	/*
-	 * @Override public Iterable<Flight> findAll() { // TODO Auto-generated method
-	 * stub return flightRepository.findAll(); }
-	 */
 }
