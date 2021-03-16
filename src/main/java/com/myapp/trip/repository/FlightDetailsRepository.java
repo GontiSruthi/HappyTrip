@@ -11,7 +11,7 @@ public interface FlightDetailsRepository extends JpaRepository<FlightDetails, In
 	@Query("select e from FlightDetails e where fromCity=?1 and toCity=?2 and travelDate=?3 ")
 	public FlightDetails findBySourceAndDestinationAndDate(String fromCity, String toCity, String d);
 
-	@Query("select e from FlightDetails e where FlightId=?1 ")
+	@Query("select e from FlightDetails e where flightId=?1 ")
 	public FlightDetails findFlightById(int flightNo);
 
 	public FlightDetails getFlightById(int i);
