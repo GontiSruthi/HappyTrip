@@ -1,0 +1,112 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  #type: NodePort
+  ports:
+    - port: 3306
+      #nodePort: 31000
+  selector:
+    app: mysql
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - image: mysql:8
+          name: mysql
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+            requests:
+              memory: "500Mi"
+              cpu: "500m"
+          env:
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_DATABASE
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD
+          ports:
+            - containerPort: 3306
+              name: mysql
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql
+            - name: initdb
+              mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim
+        - name: initdb
+          configMap:
+            name: mysql-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+  MYSQL_DATABASE: happytrip
+  MYSQL_DATABASE_URL: jdbc:mysql://mysql/happytrip
+  initdb.sql: |
+    use happytrip;
+    CREATE TABLE flight_details(id int AUTO_INCREMENT,airline_name varchar(30),arrival_time varchar(30),departure_time varchar(30),flight_id int,from_city varchar(30),to_city varchar(30), travel_date varchar(30),available_business_seats int,available_economy_seats int);
+    CREATE TABLE Flight (flightNo int AUTO_INCREMENT, flightName varchar(100), airlineCode varchar(100), airlineName varchar(100), capacity int, fromCity varchar(100), toCity varchar(100), arrivalTime varchar(100), departureTime varchar(100), ticketCost double(7,2), dateOfDeparture varchar(100));
+    CREATE TABLE logintable(id int AUTO_INCREMENT,username varchar(25),pass varchar(25));
+    CREATE TABLE fare(id int AUTO_INCREMENT,businessClassFare int,economyClassFare int,flightId int);
+    CREATE TABLE Users(id int AUTO_INCREMENT, address varchar(255),age int,contact long, country varchar(255),emailid  varchar(255),gender varchar(255), name varchar(255));
+    CREATE TABLE passenger(id int AUTO_INCREMENT, age int, contact long, gender varchar(100), name varchar(100));
+    CREATE TABLE booking(id int AUTO_INCREMENT,booked_date varchar(255),fare int,on_boarding_date varchar(255),preferred_class varchar(255),flight_id int,passenger_id int); 
+    
+    insert into flight_details(id,airline_name,arrival_time,departure_time,flight_id,available_business_seats,available_economy_seats,from_city,to_city,travel_date)values(1,"AirIndia","9:00:00","11:00:00",2121,30,30,"Hyderabad","vizag","2021-03-11");
+    insert into flight(flight_no,flight_name,airline_code,airline_name,capacity,from_city,to_city,arrival_time,departure_time,ticket_Cost,date_of_departure) values (121, "IG00121", "IG", "IndiGo", 30, "Pune", "Delhi", "15:00", "17:00", 6500,"11-03-2021");
+    insert into logintable(id,username,pass)values(1,"sruthi","123");
+    insert into user(id,address,age,contact,age,contact,country,emailid,gender,name)values(1,"hyderbad",22,12345678,"INDIA","abc@gmail.com","female","preethi");
+    insert into fare(businessClassFare,economyClassFare,flightId)values(5600,9000,1);
+ 
