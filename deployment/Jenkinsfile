@@ -34,15 +34,22 @@ node {
       }
    }
         
-    stage ('Build Docker Image') {
-         steps {
-              sh 'mvn k8s:build k8s:resource'
-            }
+   stage ('Build Docker Image') {
+           if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' k8s:build k8s:resource"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" k8s:build k8s:resource/)
+      }
+                
+            
         }
 		
 	stage ('Kubernetes Deploy') {
-          steps {
-                sh 'mvn k8s:deploy'
+             if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' k8s:deploy"
             }
+            else {
+         bat(/"${mvnHome}\bin\mvn" k8s:deploy/)
+      }
         }
     }
