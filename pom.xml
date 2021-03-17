@@ -11,8 +11,8 @@
 	</parent>
 	<groupId>com.trip</groupId>
 	<artifactId>Happy-Trip</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>1.0</version>
+	<packaging>jar</packaging>
 	<name>Happy-Trip</name>
 	<description>Flight Booking System</description>
 	<properties>
@@ -27,11 +27,6 @@
 			<name>releases</name>
 			<url>http://localhost:8087/artifactory/libs-release-local</url>
 		</repository>
-		<snapshotRepository>
-			<id>snapshot</id>
-			<name>snapshots</name>
-			<url>http://localhost:8087/artifactory/libs-snapshot-local</url>
-		</snapshotRepository>
 	</distributionManagement>
 	<scm>
 		<connection>scm:git:git@github.com:GontiSruthi/HappyTrip.git</connection>
