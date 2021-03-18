@@ -11,3 +11,5 @@ next changes by preethi
 
 updated weebhooks
 Webhooks added to jenkins
+
+Updated webhooks configuration
