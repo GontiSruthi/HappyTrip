@@ -1,7 +1,7 @@
 node {
    def mvnHome
    stage('Prepare') {
-      git url: 'https://github.com/krishnamurthypradeep/devops-cicd.git', branch: 'master'
+      git url: 'https://github.com/GontiSruthi/HappyTrip.git', branch: 'develop'
       mvnHome = tool 'maven'
    }
 
@@ -34,16 +34,4 @@ node {
       }
    }
         
-		
-		stage ('Build Docker Image') {
-            steps {
-                sh 'mvn k8s:build k8s:resource'
-            }
-        }
-		
-		stage ('Kubernetes Deploy') {
-            steps {
-                sh 'mvn k8s:deploy'
-            }
-        }
     }
