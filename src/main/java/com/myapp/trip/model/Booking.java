@@ -16,7 +16,7 @@ import com.myapp.trip.model.Common.PreferredClass;
 @Entity
 public class Booking {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	@Column(name = "on_boarding_date")

@@ -11,8 +11,8 @@ import javax.persistence.Table;
 @Table(name = "Flight")
 public class Flight {
 	@Id
-	@Column(name = "flight_no")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "flightNo")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int flightNo;
 	@Column
 	private String flightName;
