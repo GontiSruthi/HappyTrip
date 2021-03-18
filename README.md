@@ -10,7 +10,4 @@ First stand up meeting
 next changes by preethi
 
 updated weebhooks
-Webhooks added to jenkins
-
-Updated webhooks configuration
-updated Webhooks config
+updated Webhooks configuration
